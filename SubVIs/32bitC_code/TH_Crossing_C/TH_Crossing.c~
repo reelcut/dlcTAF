@@ -1,0 +1,43 @@
+/* Call Library source file */
+#include <math.h>
+
+
+_declspec(dllexport) void THcrossing_c(short InputArray[], short NewData[], long Nnew, long Nchan, long Ndata, long TH, 
+	long MonChan, long *Crossing, double *mean);
+
+_declspec(dllexport) void THcrossing_c(short InputArray[], short NewData[], long Nnew, long Nchan, long Ndata, long TH, 
+	long MonChan, long *Crossing, double *mean)
+	{
+
+	long ii,ind,DIDCROSS;
+	short tmp;
+	double mn;
+		
+	mn=0;
+	for (ii=0;ii<Ndata;ii++){
+			mn += InputArray[ii+MonChan*Ndata];
+	}
+	if (Ndata>0) {
+		mn = (double)((double)mn/(double)Ndata);
+	} else {
+		mn=0.0;
+	}
+	*mean=mn;
+
+	ind=0;DIDCROSS=0;
+	while ((ind<Nnew)&&(DIDCROSS==0)) {
+		tmp=NewData[ind+MonChan*Nnew] - mn;
+		/* take abs */
+		if (tmp<0){
+			tmp=-tmp;
+		}
+	
+		if (tmp >=TH) {
+			DIDCROSS=1;
+		}
+			
+		ind++;
+	}
+	*Crossing=DIDCROSS;
+	return;	
+}

@@ -1,0 +1,33 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: ArrayShift - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP1B.tmp" with contents
+[
+/nologo /Zp1 /MD /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "ARRAYSHIFT_EXPORTS" /Fp"Debug/ArrayShift.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ  /c 
+"C:\evtaf_test\arrayshift.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP1B.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP1C.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /incremental:yes /pdb:"Debug/ArrayShift.pdb" /debug /machine:I386 /out:"Debug/ArrayShift.dll" /implib:"Debug/ArrayShift.lib" /pdbtype:sept 
+.\Debug\arrayshift.obj
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP1C.tmp"
+<h3>Output Window</h3>
+Compiling...
+arrayshift.c
+Linking...
+   Creating library Debug/ArrayShift.lib and object Debug/ArrayShift.exp
+
+
+
+<h3>Results</h3>
+ArrayShift.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
